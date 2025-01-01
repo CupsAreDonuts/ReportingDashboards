@@ -13,8 +13,13 @@ by_date_chart = alt.Chart(cashflow_by_date, title='Cashflow tracker').mark_bar()
     alt.Y('Amount:Q')
 )
 
-st.header('Cashflow per day')
+st.title('Cashflow per day')
 st.altair_chart(by_date_chart, use_container_width=True)
+st.header('Cashflow table')
+cashflow_by_date.drop(['x_axis_order'], axis=1, inplace=True)
+st.dataframe(cashflow_by_date, use_container_width=True)
+st.header('Complete table')
+st.dataframe(cashflow, use_container_width=True)
 
 
 if __name__ == '__main__':
