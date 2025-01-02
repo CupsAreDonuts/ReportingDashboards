@@ -8,9 +8,9 @@ key_location = Path(__file__).parent.parent / 'keys/google_sheets.json'
 authenticator = gspread.service_account(filename=key_location.resolve())
 
 
-def load_study_tracking():
-    spreadsheet = authenticator.open('Study Tracker')
-    worksheet = spreadsheet.worksheet('Tracker')
+def load_scholarship_tracking():
+    spreadsheet = authenticator.open('Improvement Tracker')
+    worksheet = spreadsheet.worksheet('Scholarship')
     return pd.DataFrame(worksheet.get_all_records())
 
 
