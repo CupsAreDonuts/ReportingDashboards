@@ -11,7 +11,9 @@ authenticator = gspread.service_account(filename=key_location.resolve())
 def load_scholarship_tracking():
     spreadsheet = authenticator.open('Improvement Tracker')
     worksheet = spreadsheet.worksheet('Scholarship')
-    return pd.DataFrame(worksheet.get_all_records())
+    scholarship = pd.DataFrame(worksheet.get_all_records())
+    scholarship['Date'] = scholarship['Date'].map(lambda date: pd.to_datetime(date, format='%d.%m.%Y'))
+    return scholarship
 
 
 def load_cashflow_tracking():
