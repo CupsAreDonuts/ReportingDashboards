@@ -27,5 +27,5 @@ st.altair_chart(scholarship_effort_distribution, use_container_width=True)
 
 if __name__ == '__main__':
     if not st.runtime.exists():
-        sys.argv = ["streamlit", "run", "Overview.py"]
+        sys.argv = ["streamlit", "run", "Scholarship.py"]
         sys.exit(stcli.main())
