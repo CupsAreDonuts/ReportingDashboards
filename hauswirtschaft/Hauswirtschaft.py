@@ -24,5 +24,5 @@ st.dataframe(cashflow, use_container_width=True)
 
 if __name__ == '__main__':
     if not st.runtime.exists():
-        sys.argv = ["streamlit", "run", "Overview.py"]
+        sys.argv = ["streamlit", "run", "Hauswirtschaft.py"]
         sys.exit(stcli.main())
